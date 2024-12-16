@@ -7,7 +7,7 @@ The Cool-Kids-Network is a web application designed to create a community where 
 The frontend of the application is built using React, a popular JavaScript library for building user interfaces. We utilize Material-UI for styling and component design, which provides a set of pre-designed components that follow Google's Material Design guidelines. 
 
 ### Key Features of the Frontend:
-- **User Authentication**: Users can sign up and log in to the application.
+- **User Authentication**: Users can sign in to the application.
 - **Role Management**: Maintainers can update user roles through a dashboard interface.
 - **Character Management**: Users can view and manage their characters based on their roles.
 - **Responsive Design**: The application is designed to be responsive, ensuring a good user experience on both desktop and mobile devices.
@@ -22,7 +22,7 @@ The frontend of the application is built using React, a popular JavaScript libra
 The backend of the application is built using NestJS, a progressive Node.js framework for building efficient and scalable server-side applications. We use Prisma as our ORM (Object-Relational Mapping) tool to interact with the PostgreSQL database.
 
 ### Key Features of the Backend:
-- **User Management**: Handles user registration, login, and role updates.
+- **User Management**: Handles user registration, and role updates.
 - **Character Management**: Manages character data associated with users.
 - **API Endpoints**: Provides RESTful API endpoints for the frontend to interact with.
 
@@ -63,14 +63,14 @@ DATABASE_URL="postgresql://cool_kids_network_user:xCjyxFPdaNCJpVcL5JELOf4HPbT3Rf
 ## Setup Instructions
 
 ### Prerequisites
-- Node.js (version 14 or higher)
+- Node.js
 - npm (Node package manager)
 - PostgreSQL database (local or hosted)
 
 ### Frontend Setup
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/cool-kids-network.git
+   git clone https://github.com/muntazim-husain/Cool-Kids-Network.git
    cd cool-kids-network/frontend
    ```
 
@@ -81,7 +81,7 @@ DATABASE_URL="postgresql://cool_kids_network_user:xCjyxFPdaNCJpVcL5JELOf4HPbT3Rf
 
 3. Start the development server:
    ```bash
-   npm start
+   npm run start
    ```
 
 4. Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
