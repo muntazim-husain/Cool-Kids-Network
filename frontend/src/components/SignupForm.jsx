@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import CharacterInfo from './CharacterInfo';
-import { TextField, Button, Typography, CircularProgress } from '@mui/material';
+import { TextField, Button, Typography, CircularProgress, Box, Paper, Link } from '@mui/material';
+import { PersonAdd } from '@mui/icons-material';
 import { registerUser } from '../api/api';
 
 const SignupForm = () => {
@@ -58,40 +59,64 @@ const SignupForm = () => {
       {userData ? (
         <CharacterInfo userData={userData} />
       ) : (
-        <div className="flex flex-col gap-5 p-7 bg-white rounded-xl shadow-md">
-          <Typography variant="h5" gutterBottom>
-            Signup
-          </Typography>
-          <TextField
-            fullWidth
-            label="Email Address"
-            variant="outlined"
-            className="mb-4"
-            value={email}
-            onChange={handleEmailChange}
-            error={!!error}
-            helperText={error}
-            disabled={loading}
-            onKeyPress={(e) => {
-              if (e.key === 'Enter') {
-                handleSignup();
-              }
-            }}
-          />
-          <Button
-            variant="contained"
-            color="primary"
-            fullWidth
-            onClick={handleSignup}
-            disabled={loading || !email.trim()}
-          >
-            {loading ? (
-              <CircularProgress size={24} color="inherit" />
-            ) : (
-              'Register'
-            )}
-          </Button>
-        </div>
+        <Box className="flex justify-center items-center min-h-[65vh] p-4">
+          <Paper elevation={4} className="w-full max-w-md overflow-hidden rounded-3xl">
+            {/* Updated header with fresh gradient */}
+            <Box className="bg-gradient-to-br from-indigo-950 to-slate-900 p-9 flex flex-col items-center text-white">
+              <PersonAdd sx={{ fontSize: 52, mb: 1.5, opacity: 0.95 }} />
+              <Typography variant="h4" className="font-semibold tracking-[-0.5px]">
+                Join the network
+              </Typography>
+              <Typography variant="body2" className="mt-1 opacity-75">
+                Create your account in seconds
+              </Typography>
+            </Box>
+
+            <Box className="p-8 bg-white">
+              <TextField
+                fullWidth
+                label="Email address"
+                variant="outlined"
+                value={email}
+                onChange={handleEmailChange}
+                error={!!error}
+                helperText={error}
+                disabled={loading}
+                onKeyPress={(e) => e.key === 'Enter' && handleSignup()}
+                sx={{ mb: 3, '& .MuiOutlinedInput-root': { borderRadius: '14px' } }}
+              />
+
+              <Button
+                variant="contained"
+                fullWidth
+                size="large"
+                onClick={handleSignup}
+                disabled={loading || !email.trim()}
+                sx={{
+                  py: 1.6,
+                  borderRadius: '14px',
+                  textTransform: 'none',
+                  fontSize: '1rem',
+                  fontWeight: 600,
+                  background: 'linear-gradient(to right, #312e81, #1e3a8a)',
+                  '&:hover': { background: 'linear-gradient(to right, #3730a3, #1e40af)' }
+                }}
+              >
+                {loading ? <CircularProgress size={24} color="inherit" /> : 'Create Account'}
+              </Button>
+
+              <Typography variant="caption" className="block text-center mt-5 text-gray-500">
+                We'll email you a confirmation link
+              </Typography>
+
+              <Box className="text-center mt-4">
+                <Link href="#" underline="hover" variant="body2" color="text.secondary">
+                  Already have an account? Log in
+                </Link>
+              </Box>
+            </Box>
+          </Paper>
+        </Box>
       )}
     </>
   );
