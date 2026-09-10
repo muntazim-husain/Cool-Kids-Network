@@ -61,8 +61,8 @@ const SignupForm = () => {
       ) : (
         <Box className="flex justify-center items-center min-h-[65vh] p-4">
           <Paper elevation={4} className="w-full max-w-md overflow-hidden rounded-3xl">
-            {/* New header */}
-            <Box className="bg-gradient-to-br from-slate-900 to-zinc-800 p-9 flex flex-col items-center text-white">
+            {/* Updated header with fresh gradient */}
+            <Box className="bg-gradient-to-br from-indigo-950 to-slate-900 p-9 flex flex-col items-center text-white">
               <PersonAdd sx={{ fontSize: 52, mb: 1.5, opacity: 0.95 }} />
               <Typography variant="h4" className="font-semibold tracking-[-0.5px]">
                 Join the network
@@ -98,8 +98,8 @@ const SignupForm = () => {
                   textTransform: 'none',
                   fontSize: '1rem',
                   fontWeight: 600,
-                  background: 'linear-gradient(to right, #0f172a, #334155)',
-                  '&:hover': { background: 'linear-gradient(to right, #1e2937, #475569)' }
+                  background: 'linear-gradient(to right, #312e81, #1e3a8a)',
+                  '&:hover': { background: 'linear-gradient(to right, #3730a3, #1e40af)' }
                 }}
               >
                 {loading ? <CircularProgress size={24} color="inherit" /> : 'Create Account'}
